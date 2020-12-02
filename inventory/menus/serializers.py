@@ -6,3 +6,9 @@ class RestaurantSerializer(ModelSerializer):
     class Meta:
         model = Restaurant
         fields = '__all__'
+
+
+class FoodSerializer(ModelSerializer):
+    class Meta:
+        model = Food
+        fields = '__all__'

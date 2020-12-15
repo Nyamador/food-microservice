@@ -12,7 +12,11 @@ class Restaurant(models.Model):
 
 
 class Category(models.Model):
-    pass
+    name = models.CharField("Category Name", max_length=100)
+    date_added = models.DateField("Date Added", auto_now_add=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Food(models.Model):

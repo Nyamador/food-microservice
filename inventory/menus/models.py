@@ -22,6 +22,7 @@ class Category(models.Model):
 class Food(models.Model):
     name = models.CharField("Food Name", max_length=500)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     description = models.CharField("Description", max_length=1000)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     date_added = models.DateField("Date Added", auto_now_add=True)

@@ -1,3 +1,20 @@
-version: "3.8"
+version: "3.9"
 services:
+    auth:
+        build: ./identity
+        ports:
+            "8000:8000"
+    inventory:
+        build: ./inventory
+        ports:
+            "5000:5000"
+    ordering:
+        build: ./ordering
+        ports:
+            "6000:6000"
+    payment:
+        build: ./payment
+        ports: 
+            "7000:7000"
     webserver:
+        build: ./nginx

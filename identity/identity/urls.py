@@ -18,12 +18,14 @@ from django.urls import path
 
 # from rest_framework_jwt.views import verify_jwt_token, obtain_jwt_token, refresh_jwt_token
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+from users.views import some_protected_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api-token-auth/', obtain_jwt_token),
     # path('api-token-refresh/', refresh_jwt_token),
     # path('api-token-verify/', verify_jwt_token),
+    path('', some_protected_view, name="protected_view"),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify' ),
     path('api/token/refresh', TokenRefreshView.as_view(), name='token_resfresh'),
